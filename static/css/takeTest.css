@@ -1,0 +1,105 @@
+.take-test-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .take-test-container1 {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .take-test-text {
+    margin: var(--dl-space-space-unit);
+    padding: var(--dl-space-space-oneandhalfunits);
+    font-family: "Comic Sans MS";
+  }
+  .take-test-container2 {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .take-test-container3{
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    margin: 30px;
+    display: flex;
+    align-self: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom:30px;
+  }
+  .take-test-text01, .take-test-text02, .take-test-text03, .take-test-text04, .take-test-text05, .take-test-text06, .take-test-text07, .take-test-text08, .take-test-text09, .take-test-text10, .take-test-text11, .take-test-text12, .take-test-text13, .take-test-text14, .take-test-text15 {
+    font-size: 20px;
+    margin-top: var(--dl-space-space-halfunit);
+    font-family: "Georgia";
+    margin-left: var(--dl-space-space-halfunit);
+    margin-right: var(--dl-space-space-fourunits);
+    margin-bottom: 40px;
+  }
+  
+  .take-test-container4 {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-self: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left:250px;
+    padding-left:20px;
+  }
+  .clrwheel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.color-wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-wheel-canvas {
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.slider {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.hue-value {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .take-test-button {
+    align-self: center;
+    font-size: 20px;
+    font-family: "Arial";
+    border-color: #4e9a1c;
+    border-width: 3px;
+    background-color: #ff0823;
+    margin:30px;
+  }
+  
