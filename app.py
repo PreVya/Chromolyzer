@@ -50,7 +50,7 @@ def submit_colors():
 @app.route('/result')
 def show_result():
     deci_per=request.args.get('deci_per','')
-    emp_per = request.args.get('emp_per', '')
+    emp_per = float(request.args.get('emp_per', ''))
     social_incli=request.args.get('social_incli', '')
     social_well_per=request.args.get('social_well_per', '')
     curiosity_per=request.args.get('curiosity_per', '')
