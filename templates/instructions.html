@@ -1,60 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head><title>Instructions for Chromolyzer</title></head>
-    <body>
-        <div class="instructions-container">
-            <link href="../static/css/instructions.css" rel="stylesheet" />
-              <div class="instructions-container1">
-                <form class="instructions-form" action="/takeTest">
-                  <div class="instructions-container2">
-                    <span class="instructions-text">Name: </span>
-                      <input
-                        width="400"
-                        type="text"
-                        name="name"
-                        placeholder="Enter name here"
-                        class="instructions-textinput input"
-                        required
-                      />
-                  </div>
-                  <div class="instructions-container4">
-                    <span class="instructions-text1">Age: </span>
-                    <input
-                      width="400"
-                      type="number"
-                      min="10"
-                      max="85"
-                      name="age"
-                      placeholder="Enter age"
-                      class="instructions-textinput1 input"
-                      required
-                    />
-                  </div>
-                  <button type="submit" value="submit" class="take-test-button">Take Test</button>
-                </form>
-                <div class="instructions-container5">
-                  <span class="instructions-text2">
-                    <br>  Hello user!
-Before you proceed with the test, a small set of instructions to be followed so that you get most out of Chromolyzer... ❤️<br><br>
+  <head>
+    <title>Instructions for Chromolyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../static/css/home.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header data-role="Header" class="home-header">
+      <div class="home-container01 container mx-auto px-4 flex justify-between items-center">
+        <a href="/"><img alt="image" src="../static/images/chromolyzer_logo.png" class="home-image" /></a>
 
-1. Read AboutUs page to get detailed information on how Chromolyzer analyses your color choice. <br>
-2. Enter your correct name, gender and age above before proceeding for the test. <br>
-3. Test involves 15 questions. <br>
-4. For each question there's a color-wheel to choose a hue. (Read what is hue in AboutUs page). <br>
-5. Concentrate on the hues in the wheel and choose the most appropriate one according to you for each question. <br>
-6. Read the question carefully before choosing a hue from the wheel.<br>
-7. While choosing hue, slide the slider to right or left as per your color choice. <br>
-8. Colors in the color-wheel range from red (0°) to pink shade (359°). Choose from this wide range. <br>
-9. Once done with all the 15 questions, check all the selections and then click the submit button. <br>
-10. Check your results. Results are percentage of five important parameters that define your personality as a whole. <br>
-11. Read the discourse on each parameter and then check out your percentages for each parameter. <br>
-12. You can download the report as well to keep a copy of it with you. <br>
-13. Your data will be recorded for analysis and improvisation of Chromolyzer further. <br>
+        <nav class="w-full flex justify-evenly navigation-links-root-class-name15">
+          <span class="navigation-links-home"><a href="/">Home</a></span>
+          <span class="navigation-links-about-us"><a href="aboutUs">About Us</a></span>
+          <span class="navigation-links-take-test"><a href="instructions">Take Test</a></span>
+        </nav>
 
-Thank you ! And All the very best .... ❤️ <br>
-                  </span>
-                </div>
-              </div>
+        <div class="home-icon-group">
+          <svg viewBox="0 0 1024 1024" class="home-icon">
+            <path
+              d="M854 656q18 0 30 12t12 30v148q0 50-42 50-298 0-512-214t-214-512q0-42 50-42h148q18 0 30 12t12 30q0 78 24 150 8 26-10 44l-82 72q92 192 294 290l66-84q12-12 30-12 10 0 14 2 72 24 150 24z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div data-role="BurgerMenu" class="home-burger-menu">
+        <svg viewBox="0 0 1024 1024" class="home-icon02">
+          <path
+            d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+          ></path>
+        </svg>
+      </div>
+    </header>
+    <div class="instructions-container">
+      <div class="bg-black/60 h-screen">
+        <div class="container mx-auto px-4 instructions-container5 justify-center items-center gap-6">
+          <span class="instructions-text2">
+            Hello user! Before you proceed with the test, a small set of instructions to be followed so that you get most out of Chromolyzer... ❤️<br /><br />
+
+            1. Read AboutUs page to get detailed information on how Chromolyzer analyses your color choice. <br />
+            2. Enter your correct name, gender and age above before proceeding for the test. <br />
+            3. Test involves 15 questions. <br />
+            4. For each question there's a color-wheel to choose a hue. (Read what is hue in AboutUs page). <br />
+            5. Concentrate on the hues in the wheel and choose the most appropriate one according to you for each question. <br />
+            6. Read the question carefully before choosing a hue from the wheel.<br />
+            7. While choosing hue, slide the slider to right or left as per your color choice. <br />
+            8. Colors in the color-wheel range from red (0°) to pink shade (359°). Choose from this wide range. <br />
+            9. Once done with all the 15 questions, check all the selections and then click the submit button. <br />
+            10. Check your results. Results are percentage of five important parameters that define your personality as a whole. <br />
+            11. Read the discourse on each parameter and then check out your percentages for each parameter. <br />
+            12. You can download the report as well to keep a copy of it with you. <br />
+            13. Your data will be recorded for analysis and improvisation of Chromolyzer further. <br />
+
+            Thank you ! And All the very best .... ❤️ <br />
+          </span>
+          <form class="instructions-form gap-12" action="/takeTest">
+            <div class="flex gap-8 justify-center items-center">
+              <span class="instructions-text">Name: </span>
+              <input width="400" type="text" name="name" placeholder="Enter name here" class="instructions-textinput input" required />
+
+              <span class="instructions-text1">Age: </span>
+              <input width="400" type="number" min="10" max="85" name="age" placeholder="Enter age" class="instructions-textinput1 input" required />
             </div>
-    </body>
+            <button type="submit" value="submit" class="take-test-button bg-[#ff0823]">Take Test</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="home-footer">
+      <div class="container mx-auto px-4 flex justify-between">
+        <img alt="image" src="../static/images/chromolyzer_logo.png" class="home-image4 flex" />
+        <div class="home-icon-group2 gap-12">
+          <svg viewBox="0 0 950.8571428571428 1024" class="w-6 h-6">
+            <path
+              d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+            ></path></svg
+          ><svg viewBox="0 0 877.7142857142857 1024" class="w-6 h-6">
+            <path
+              d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+            ></path></svg
+          ><svg viewBox="0 0 602.2582857142856 1024" class="w-6 h-6">
+            <path
+              d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+            ></path>
+          </svg>
+        </div>
+        <span class="home-text09 flex justify-end items-end">© 2023 Chomolyzer, All Rights Reserved.</span>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,186 +1,180 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html>
-    <head>
-        <title>Chromolyzer - Test is on</title>
-        <style>
-          .clrwheel {
-              display: flex;
-              flex-direction: column; /* Display color wheels in a column */
-              align-items: center;
-              height: 100vh;
-              margin: 0;
-              position: relative;
-          }
-      
-          canvas {
-              border-radius: 50%;
-              border: 1px solid #ccc;
-          }
-      
-          .color-wheel-container {
-              margin:20px;
-              display: flex;
-              flex-direction: column; /* Display color wheels in a column */
-              align-items: center;
-          }
-      
-          #slider-container {
-              margin-top: 20px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-          }
-      
-          .slider {
-              width: 200px;
-              margin-top: 10px;
-          }
-      
-          .hueValue {
-              margin-top: 10px;
-              font-size: 16px;
-          }
-      </style>
-      
-      </style>
-    </head>
-    <body>
-        <form id="colorForm" method="post" action="{{url_for('submit_colors')}}">
-            <input type="hidden" name="name" value="{{ name }}">
-            <input type="hidden" name="age" value="{{ age }}">
-            <div>
-                <link href="../static/css/takeTest.css" rel="stylesheet" />
-                <div class="take-test-container">
-                  <div class="take-test-container1">
-                    <h1 class="take-test-text">Start the test...Choose the most suited hue ...🍭</h1>
-                  </div>
-                  <div class="take-test-container2">
-                    <div class="take-test-container3">
-                      <span class="take-test-text01">I am a warrior.</span>
-                      <span class="take-test-text02">I do not laugh easily.</span>
-                      <span class="take-test-text03">I am not light-hearted.</span>
-                      <span class="take-test-text04">Once I find a right way to do something I stick to it.</span>
-                      <span class="take-test-text05">I am a productive person who likes to get the job done.</span>
-                      <span class="take-test-text06">Poetry and literature has substantial effect on me. </span>
-                      <span class="take-test-text07">If I like/don’t like people I let them know it.</span>
-                      <span class="take-test-text08">I usually prefer to do things alone</span>
-                      <span class="take-test-text09">I rarely feel tense and lonely</span>
-                      <span class="take-test-text10">Most people I know like me. </span>
-                      <span class="take-test-text11">I do not react on the way people treat me</span>
-                      <span class="take-test-text12">I do not manipulate people/ their decisions to get or achieve what I want</span>
-                      <span class="take-test-text13">I am intrigued by the patterns I find in art and nature</span>
-                      <span class="take-test-text14">I enjoy playing with theories or abstract ideas</span>
-                      <span class="take-test-text15">I like to try new things</span>
-                    </div>
-                    <div class="take-test-container4">
-                      <div class="clrwheel" id="colorWheelContainer"></div>
+  <head>
+    <title>Chromolyzer - Test is on</title>
+    <style>
+      .clrwheel {
+        display: flex;
+        flex-direction: column; /* Display color wheels in a column */
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
 
-<script>
-    function drawColorWheel(ctx, hue) {
-        const centerX = ctx.canvas.width / 2;
-        const centerY = ctx.canvas.height / 2;
-        const radius = ctx.canvas.width / 2 - 10;
+      canvas {
+        border-radius: 50%;
+        border: 1px solid #ccc;
+      }
 
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      .color-wheel-container {
+        margin: 20px;
+        display: flex;
+        flex-direction: column; /* Display color wheels in a column */
+        align-items: center;
+      }
 
-        for (let angle = 0; angle < 360; angle++) {
-            const radian = (angle * Math.PI) / 180;
-            const x = centerX + radius * Math.cos(radian);
-            const y = centerY + radius * Math.sin(radian);
+      #slider-container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-            ctx.fillStyle = `hsl(${angle}, 100%, 50%)`;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, radius, (angle - 90) * (Math.PI / 180), (angle - 89) * (Math.PI / 180));
-            ctx.lineTo(centerX, centerY);
-            ctx.fill();
-        }
+      .slider {
+        width: 200px;
+        margin-top: 10px;
+      }
 
-        const indicatorRadian = (hue - 90) * (Math.PI / 180);
-        const indicatorX = centerX + radius * Math.cos(indicatorRadian);
-        const indicatorY = centerY + radius * Math.sin(indicatorRadian);
-
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(indicatorX, indicatorY, 8, 0, 2 * Math.PI);
-        ctx.stroke();
-    }
-
-    function initializeColorWheel(container, index) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 190;
-        canvas.height = 190;
-        canvas.classList.add('colorWheel');
-
-        const slider = document.createElement('input');
-        slider.type = 'range';
-        slider.classList.add('slider');
-        slider.min = '0';
-        slider.max = '359';
-        slider.step = '1';
-        slider.value = '0';
-        slider.id = `slider${index}`;
-
-        const hueValue = document.createElement('div');
-        hueValue.classList.add('hueValue');
-        hueValue.textContent = 'Hue: 0°';
-
-        const sliderContainer = document.createElement('div');
-        sliderContainer.id = 'slider-container';
-        sliderContainer.appendChild(slider);
-        sliderContainer.appendChild(hueValue);
-
-        const colorWheelContainer = document.createElement('div');
-        colorWheelContainer.classList.add('color-wheel-container');
-        colorWheelContainer.appendChild(canvas);
-        colorWheelContainer.appendChild(sliderContainer);
-
-        document.getElementById('colorWheelContainer').appendChild(colorWheelContainer);
-
-        const ctx = canvas.getContext('2d');
-
-        slider.addEventListener('input', () => {
-            const hue = slider.value;
-            drawColorWheel(ctx, hue);
-            hueValue.textContent = `Hue: ${hue}°`;
-        });
-
-        drawColorWheel(ctx, slider.value);
-    }
-
-    for (let i = 0; i < 15; i++) {
-        initializeColorWheel('colorWheelContainer', i);
-    }
-
-    function submitColors() {
-        const colorValues = [];
-
-        for (let i = 0; i < 15; i++) {
-            const hue = document.getElementById(`slider${i}`).value;
-            colorValues.push(hue);
-        }
-
-        // Add an input field to the form to send the colors data to the backend
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'colors';
-        input.value = colorValues;
-        document.getElementById('colorForm').appendChild(input);
-
-        // Submit the form
-        document.getElementById('colorForm').submit();
-    }
-    </script>
-                </div>
+      .hueValue {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="colorForm" method="post" action="{{url_for('submit_colors')}}">
+      <input type="hidden" name="name" value="{{ name }}" />
+      <input type="hidden" name="age" value="{{ age }}" />
+      <div>
+        <link href="../static/css/takeTest.css" rel="stylesheet" />
+        <div class="take-test-container">
+          <div class="take-test-container1">
+            <h1 class="take-test-text">Start the test...Choose the most suited hue ...🍭</h1>
+          </div>
+          <div class="take-test-container2">
+            <div class="take-test-container3">
+              <span class="take-test-text01">I am a warrior.</span>
+              <span class="take-test-text02">I do not laugh easily.</span>
+              <span class="take-test-text03">I am not light-hearted.</span>
+              <span class="take-test-text04">Once I find a right way to do something I stick to it.</span>
+              <span class="take-test-text05">I am a productive person who likes to get the job done.</span>
+              <span class="take-test-text06">Poetry and literature has substantial effect on me. </span>
+              <span class="take-test-text07">If I like/don’t like people I let them know it.</span>
+              <span class="take-test-text08">I usually prefer to do things alone</span>
+              <span class="take-test-text09">I rarely feel tense and lonely</span>
+              <span class="take-test-text10">Most people I know like me. </span>
+              <span class="take-test-text11">I do not react on the way people treat me</span>
+              <span class="take-test-text12">I do not manipulate people/ their decisions to get or achieve what I want</span>
+              <span class="take-test-text13">I am intrigued by the patterns I find in art and nature</span>
+              <span class="take-test-text14">I enjoy playing with theories or abstract ideas</span>
+              <span class="take-test-text15">I like to try new things</span>
             </div>
-        </div>
+            <div class="take-test-container4">
+              <div class="clrwheel" id="colorWheelContainer"></div>
 
-                  </div>
-                  
-                </div>
-              </div>
-              
-              <button type="submit" class="take-test-button button" onclick="submitColors()">Submit</button>       
-        </form>
-    </body>
+              <script>
+                function drawColorWheel(ctx, hue) {
+                  const centerX = ctx.canvas.width / 2;
+                  const centerY = ctx.canvas.height / 2;
+                  const radius = ctx.canvas.width / 2 - 10;
+
+                  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+                  for (let angle = 0; angle < 360; angle++) {
+                    const radian = (angle * Math.PI) / 180;
+                    const x = centerX + radius * Math.cos(radian);
+                    const y = centerY + radius * Math.sin(radian);
+
+                    ctx.fillStyle = `hsl(${angle}, 100%, 50%)`;
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, radius, (angle - 90) * (Math.PI / 180), (angle - 89) * (Math.PI / 180));
+                    ctx.lineTo(centerX, centerY);
+                    ctx.fill();
+                  }
+
+                  const indicatorRadian = (hue - 90) * (Math.PI / 180);
+                  const indicatorX = centerX + radius * Math.cos(indicatorRadian);
+                  const indicatorY = centerY + radius * Math.sin(indicatorRadian);
+
+                  ctx.strokeStyle = "#000";
+                  ctx.lineWidth = 2;
+                  ctx.beginPath();
+                  ctx.arc(indicatorX, indicatorY, 8, 0, 2 * Math.PI);
+                  ctx.stroke();
+                }
+
+                function initializeColorWheel(container, index) {
+                  const canvas = document.createElement("canvas");
+                  canvas.width = 190;
+                  canvas.height = 190;
+                  canvas.classList.add("colorWheel");
+
+                  const slider = document.createElement("input");
+                  slider.type = "range";
+                  slider.classList.add("slider");
+                  slider.min = "0";
+                  slider.max = "359";
+                  slider.step = "1";
+                  slider.value = "0";
+                  slider.id = `slider${index}`;
+
+                  const hueValue = document.createElement("div");
+                  hueValue.classList.add("hueValue");
+                  hueValue.textContent = "Hue: 0°";
+
+                  const sliderContainer = document.createElement("div");
+                  sliderContainer.id = "slider-container";
+                  sliderContainer.appendChild(slider);
+                  sliderContainer.appendChild(hueValue);
+
+                  const colorWheelContainer = document.createElement("div");
+                  colorWheelContainer.classList.add("color-wheel-container");
+                  colorWheelContainer.appendChild(canvas);
+                  colorWheelContainer.appendChild(sliderContainer);
+
+                  document.getElementById("colorWheelContainer").appendChild(colorWheelContainer);
+
+                  const ctx = canvas.getContext("2d");
+
+                  slider.addEventListener("input", () => {
+                    const hue = slider.value;
+                    drawColorWheel(ctx, hue);
+                    hueValue.textContent = `Hue: ${hue}°`;
+                  });
+
+                  drawColorWheel(ctx, slider.value);
+                }
+
+                for (let i = 0; i < 15; i++) {
+                  initializeColorWheel("colorWheelContainer", i);
+                }
+
+                function submitColors() {
+                  const colorValues = [];
+
+                  for (let i = 0; i < 15; i++) {
+                    const hue = document.getElementById(`slider${i}`).value;
+                    colorValues.push(hue);
+                  }
+
+                  // Add an input field to the form to send the colors data to the backend
+                  const input = document.createElement("input");
+                  input.type = "hidden";
+                  input.name = "colors";
+                  input.value = colorValues;
+                  document.getElementById("colorForm").appendChild(input);
+
+                  // Submit the form
+                  document.getElementById("colorForm").submit();
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="take-test-button button" onclick="submitColors()">Submit</button>
+    </form>
+  </body>
 </html>
