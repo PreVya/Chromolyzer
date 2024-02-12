@@ -32,11 +32,12 @@
 .about-us-container {
   width: 100%;
   display: flex;
-  overflow: auto;
   min-height: auto;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-size: cover;
+  background-image: url("/static/images/about-bg.jpeg");
 }
 .about-us-header {
   width: 100%;
@@ -137,17 +138,16 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-size: cover;
-  background-image: url("https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8c2VhcmNofDEzfHxwc3ljaG9sb2d5JTIwY29sb3VyfGVufDB8fHx8MTcwNDYwMjM2M3ww&ixlib=rb-4.0.3&q=80&w=1500");
-  background-position: center;
 }
 .about-us-text {
-  align-self: flex-start;
+  align-self: flex-center;
+  font-size: 30px;
+  font-weight: 700;
 }
 .about-us-container04 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* You can remove this line, as it is the default value for column direction */
+  align-items: flex-center; /* You can remove this line, as it is the default value for column direction */
 }
 
 /* Ensure child elements take the full width of the container */
@@ -155,13 +155,12 @@
   width: 100%;
 }
 .about-us-container05 {
-  flex: 0 0 auto;
   width: 100%;
   border: 2px dashed rgba(120, 120, 120, 0.4);
-  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   margin: 20px;
 }
 .about-us-container06 {
