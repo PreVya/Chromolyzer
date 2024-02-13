@@ -1,72 +1,73 @@
 .meter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .progress1 {
-    height: 20px; /* Adjust height as needed */
-    background-color: #ddd; /* Adjust background color as needed */
-    border-radius: 5px;
-    width:200px;
-    position: relative; /* Needed for positioning inner spans */
-  }
-  
-  .progress-bar1 {
-    background-color: #007bff; /* Set your desired meter color */
-    height: 100%;
-    border-radius: 5px; 
-    text-align: center;
-    color: white;
-    /* Remove inline width style */
-  }
-  
-  .filled-bar1 {
-    position: absolute; /* Layer on top */
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: #007bff; /* Same color as the meter */
-  }
-  
-  .empty-bar1 {
-    position: absolute; /* Layer on top */
-    top: 0;
-    right: 0;
-    height: 100%;
-    background-color: #ddd; /* Same color as the progress background */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px double black;
+  padding: 10px;
+}
 
-  .progress2 {
-    height: 20px; /* Adjust height as needed */
-    background-color: #ddd; /* Adjust background color as needed */
-    border-radius: 5px;
-    width:200px;
-    position: relative; /* Needed for positioning inner spans */
-  }
-  
-  .progress-bar2 {
-    background-color: #007bff; /* Set your desired meter color */
-    height: 100%;
-    border-radius: 5px; 
-    text-align: center;
-    color: white;
-    /* Remove inline width style */
-  }
-  
-  .filled-bar2 {
-    position: absolute; /* Layer on top */
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: #007bff; /* Same color as the meter */
-  }
-  
-  .empty-bar2 {
-    position: absolute; /* Layer on top */
-    top: 0;
-    right: 0;
-    height: 100%;
-    background-color: #ddd; /* Same color as the progress background */
-  }
+.progress1 {
+  height: 20px; /* Adjust height as needed */
+  background-color: #ddd; /* Adjust background color as needed */
+  border-radius: 5px;
+  width: 200px;
+  position: relative; /* Needed for positioning inner spans */
+}
+
+.progress-bar1 {
+  background-color: #007bff; /* Set your desired meter color */
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  /* Remove inline width style */
+}
+
+.filled-bar1 {
+  position: absolute; /* Layer on top */
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #007bff; /* Same color as the meter */
+}
+
+.empty-bar1 {
+  position: absolute; /* Layer on top */
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #ddd; /* Same color as the progress background */
+}
+
+.progress2 {
+  height: 20px; /* Adjust height as needed */
+  background-color: #ddd; /* Adjust background color as needed */
+  border-radius: 5px;
+  width: 200px;
+  position: relative; /* Needed for positioning inner spans */
+}
+
+.progress-bar2 {
+  background-color: #007bff; /* Set your desired meter color */
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  /* Remove inline width style */
+}
+
+.filled-bar2 {
+  position: absolute; /* Layer on top */
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #007bff; /* Same color as the meter */
+}
+
+.empty-bar2 {
+  position: absolute; /* Layer on top */
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #ddd; /* Same color as the progress background */
+}
